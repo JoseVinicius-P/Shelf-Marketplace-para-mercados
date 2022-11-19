@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.DetalhesCompraActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/barra_superior_det_compra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_det_compra"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:title="Detalhes da compra" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/espaco"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/espaco">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_compra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sobre_a_compra"
+                android:textSize="18sp"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="15dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_dados_compra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0.5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                app:strokeColor="@color/cinza_escuro"
+                android:visibility="visible"
+                android:focusable="false"
+                android:clickable="false"
+                app:cardCornerRadius="5dp"
+                android:layout_below="@+id/tv_compra">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/icon_pedido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_pedidos_black_24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/detalhes_da_compra" />
+
+
+                    <TextView
+                        android:id="@+id/tv_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:layout_toEndOf="@+id/icon_pedido"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_horario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:layout_below="@+id/tv_data"
+                        android:layout_toEndOf="@+id/icon_pedido"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_motivo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:layout_below="@+id/tv_horario"
+                        android:layout_toEndOf="@+id/icon_pedido"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_container_status"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/tv_horario"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="15dp"
+                        android:focusable="false"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:strokeColor="@android:color/holo_red_dark"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@android:color/holo_red_dark"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:layout_margin="10dp"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:id="@+id/tv_label_estab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dados_do_mercado"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="18sp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:layout_below="@+id/cv_dados_compra"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_dados_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0.5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                app:strokeColor="@color/cinza_escuro"
+                android:visibility="visible"
+                app:cardCornerRadius="5dp"
+                android:focusable="false"
+                android:clickable="false"
+                android:layout_below="@+id/tv_label_estab">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_estab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_estab_black_24dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/detalhes_do_mercado" />
+
+                    <TextView
+                        android:id="@+id/tv_mercado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="15dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="18sp"
+                        android:layout_toStartOf="@+id/icon_whats"
+                        android:layout_toEndOf="@+id/icon_estab"/>
+
+                    <TextView
+                        android:id="@+id/tv_telefone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/icon_estab"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/cinza_escuro"
+                        android:layout_below="@+id/tv_mercado"/>
+
+                    <ImageButton
+                        android:id="@+id/icon_whats"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_whats"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:scaleType="centerCrop"
+                        android:background="@null"
+                        android:contentDescription="@string/whatsapp_do_estabelecimento" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_label_endereco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/endereco_de_entrega"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:layout_below="@id/cv_dados_cliente"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0.5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                app:strokeColor="@color/cinza_escuro"
+                android:visibility="visible"
+                android:focusable="false"
+                android:clickable="false"
+                app:cardCornerRadius="5dp"
+                android:layout_below="@+id/tv_label_endereco">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+                    <ImageView
+                        android:id="@+id/icon_endereco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_endereco"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/endereco" />
+
+
+                    <TextView
+                        android:id="@+id/tv_endereco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="15dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="18sp"
+                        android:layout_toEndOf="@+id/icon_endereco"/>
+
+                    <TextView
+                        android:id="@+id/tv_informacao_adicional"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/icon_endereco"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="15dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:layout_below="@+id/tv_endereco"
+                        android:textSize="18sp"/>
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/title_falta_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/na_falta_de_um_item"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_below="@id/cv_endereco"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_entre_contato"
+                app:strokeWidth="0.8dp"
+                app:strokeColor="@color/cinza"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginEnd="15dp"
+                app:rippleColor="@android:color/white"
+                android:focusable="false"
+                android:clickable="false"
+                android:layout_below="@+id/title_falta_item"
+                android:layout_marginStart="15dp">
+
+                <TextView
+                    android:id="@+id/tv_falta_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:layout_margin="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/cinza_escuro"
+                    android:gravity="center"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title_hora_entrega"
+                android:text="@string/hora_da_entrega"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_below="@id/cv_entre_contato"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_hora_entrega"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:strokeWidth="0.8dp"
+                app:strokeColor="@color/cinza"
+                app:rippleColor="@android:color/white"
+                android:focusable="false"
+                android:clickable="false"
+                android:layout_below="@+id/title_hora_entrega"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:id="@+id/tv_hora_entrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:layout_margin="5dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/cinza_escuro"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_label_itens_compra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lista_de_compras"
+                android:layout_below="@+id/cv_hora_entrega"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/linear_container_lista_itens"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:orientation="vertical"
+                android:layout_below="@+id/tv_label_itens_compra"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_produtos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:clipToPadding="false"
+                    android:paddingBottom="10dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbars="vertical"/>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/container_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_below="@+id/linear_container_lista_itens"
+                android:paddingBottom="25dp"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:id="@+id/label_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtotal"
+                    android:textSize="18sp"
+                    android:textColor="@color/cinza_escuro"
+                    android:layout_toStartOf="@+id/tv_subtotal"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:id="@+id/tv_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/cinza_escuro"/>
+
+                <TextView
+                    android:id="@+id/label_taxa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/taxa"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/label_subtotal"
+                    android:textColor="@color/cinza_escuro"/>
+
+                <TextView
+                    android:id="@+id/tv_taxa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@+id/label_taxa"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/cinza_escuro"/>
+
+                <!--Separador-->
+                <View
+                    android:id="@+id/separador1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cinza"
+                    android:layout_below="@+id/label_taxa"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/label_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@+id/separador1" />
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_alignBottom="@+id/label_total"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_label_forma_pagamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forma_de_pagamento"
+                android:layout_marginTop="25dp"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:textSize="18sp"
+                android:layout_below="@id/container_total"/>
+
+
+            <TextView
+                android:id="@+id/aviso_pagamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o_pagamento_ser_feito_no_momento_da_entrega"
+                android:textColor="@color/cinza"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@id/tv_label_forma_pagamento"
+                android:textSize="13sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_forma_pagamento"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:strokeWidth="0.5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="25dp"
+                app:strokeColor="@color/cinza_escuro"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                android:layout_below="@+id/aviso_pagamento"
+                android:paddingBottom="25dp"
+                android:focusable="false"
+                android:clickable="false">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/icon_pagamento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_pagamento"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/forma_de_pagamento" />
+
+
+                    <TextView
+                        android:id="@+id/tv_forma_pagamento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="15dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
+                        android:layout_toEndOf="@+id/icon_pagamento"/>
+
+                    <TextView
+                        android:id="@+id/tv_troco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/icon_pagamento"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="15dp"
+                        android:visibility="gone"
+                        android:textColor="@color/cinza_escuro"
+                        android:layout_below="@+id/tv_forma_pagamento"
+                        android:textSize="18sp"/>
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

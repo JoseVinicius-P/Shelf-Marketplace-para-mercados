@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.EstabelecimentoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/barra_superior_estabelecimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_estabelecimento"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="25dp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/estalecimento"
+                        android:textSize="18sp"
+                        android:textColor="@color/cinza_escuro" />
+
+                    <TextView
+                        android:id="@+id/tv_is_aberto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <HorizontalScrollView
+            android:id="@+id/container_categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_todos"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/colorPrimary"
+                        app:strokeWidth="0.5dp">
+
+                        <TextView
+                            android:id="@+id/tv_todos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/todos"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/cinza_escuro"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_alimentos_basicos"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_alimentos_basicos"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/alimentos_basicos"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_alimentos_basicos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Alimentos\nbásicos"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <!--<LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_feira"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="90dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Categoria Feira"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/feira"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_feira"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Frutas e \nverduras"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+                -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_limpeza"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_lipeza"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/lipeza"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_limpeza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="@string/limpeza"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_utilidade_domestica"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/utilidade_domestica"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/utilidade_domestica"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_utilidade_domestica"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Utilidade\nDoméstica"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_bebidas"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_bebidas"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bebidas"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_bebidas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="@string/bebidas"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_bebidas_alcoolicas"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_bebidas_alcoolicas"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bebidas_alcoolicas"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_bebidas_alcoolicas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Bebidas\nAlcoólicas"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_salgadinhos_biscoitos"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_salgadinhos_e_biscoitos"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/salgadinhos_biscoitos"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_salgadinhos_biscoitos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Salgadinhos e \n biscoitos"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_cuidados_pessoais"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_cuidados_pessoais"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/higiene_pessoal"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_cuidados_pessoais"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Cuidados\nPessoais"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/layout_doces_sobremesas"
+                        style="@style/Widget.MaterialComponents.CardView"
+                        android:layout_width="71dp"
+                        android:layout_height="39dp"
+                        android:layout_margin="2dp"
+                        android:clickable="true"
+                        android:elevation="0dp"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="5dp"
+                        app:rippleColor="@android:color/white"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.5dp">
+
+                        <ImageView
+                            android:layout_width="71dp"
+                            android:layout_height="39dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/categoria_doces_e_sobremesas"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/doces_sobremesas"
+                            android:visibility="visible" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_doces_sobremesas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:gravity="center"
+                        android:text="Doces e\nsobremesas"
+                        android:textColor="@color/preto"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv_aviso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_below="@id/container_categoria"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:textColor="@color/cinza"
+            android:alpha="0.7"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/carregamento"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/container_categoria">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_produtos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_produtos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/bt_proximo"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/próxima"
+                            android:textColor="@color/cinza_escuro"
+                            android:textSize="12sp"
+                            android:visibility="visible"
+                            app:rippleColor="@android:color/white"
+                            app:icon="@drawable/ic_seta_direita"
+                            app:iconGravity="end"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/bt_anterior"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/anterior"
+                            android:textColor="@color/cinza_escuro"
+                            android:textSize="12sp"
+                            android:visibility="visible"
+                            app:rippleColor="@android:color/white"
+                            app:icon="@drawable/ic_seta_esquerda"
+                            app:iconGravity="start"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize" />
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/title_produtos"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/container_categoria"
+            android:paddingBottom="15dp"
+            android:background="@drawable/gradiente_branco_p_transparent_menos90_midle">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_carrinho"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:focusable="true"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ver_carrinho"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:layout_toEndOf="@id/ic_carrinho"
+            android:layout_toStartOf="@+id/preco_total"
+            android:gravity="center"
+            android:clickable="false"/>
+
+        <ImageButton
+            android:id="@+id/ic_carrinho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/ic_carrinho"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:clickable="false"
+            android:contentDescription="@string/total_de_itens_no_carrinho" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorPrimary"
+            android:layout_toEndOf="@+id/ic_carrinho"
+            app:strokeWidth="1dp"
+            android:padding="3dp"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@android:color/white"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="-10dp"
+            android:layout_alignTop="@+id/ic_carrinho"
+            android:clickable="false">
+
+            <TextView
+                android:id="@+id/qt_total_produtos_carrinho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:layout_margin="3dp"
+                android:clickable="false"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/preco_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:clickable="false"/>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

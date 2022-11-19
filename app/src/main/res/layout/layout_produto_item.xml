@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_produto"
+    style="@style/Widget.MaterialComponents.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="7dp"
+    android:layout_marginTop="7dp"
+    android:layout_marginEnd="7dp"
+    app:cardCornerRadius="5dp"
+    app:strokeColor="@color/cinza"
+    app:strokeWidth="0.5dp"
+    app:rippleColor="@android:color/transparent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_produto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/imagem_do_produto"
+            android:src="@drawable/produto_default" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/container_add_or_tirar_carrinho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_produto"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            app:strokeWidth="0.5dp">
+
+            <ImageButton
+                android:id="@+id/ib_menos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_margin="3dp"
+                android:background="@null"
+                android:contentDescription="@string/tirar_1_deste_produto_do_carrinho"
+                android:padding="3dp"
+                android:src="@drawable/ic_menos" />
+
+            <TextView
+                android:id="@+id/tv_quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/_1"
+                android:textColor="@color/colorPrimary" />
+
+
+            <ImageButton
+                android:id="@+id/ib_mais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_margin="5dp"
+                android:background="@null"
+                android:contentDescription="@string/adicionar_1_deste_produto_ao_carrinho"
+                android:padding="3dp"
+                android:src="@drawable/ic_add" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="20dp"
+            android:layout_margin="5dp"
+            app:strokeColor="@color/colorPrimary"
+            android:layout_alignBottom="@+id/iv_produto"
+            app:strokeWidth="0.5dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <ImageButton
+                android:id="@+id/start_add_carrinho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="5dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_add"
+                android:contentDescription="@string/adicionar_1_deste_produto_ao_carrinho" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_preco_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/cinza_escuro"/>
+
+        <TextView
+            android:id="@+id/tv_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:lines="2"
+            android:maxLines="2"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/cinza_escuro"/>
+
+        <!--Separador-->
+        <View
+            android:id="@+id/separador1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cinza"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_quantidade_estoque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/cinza_escuro"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_aviso"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@android:color/white"
+        android:alpha="0.8"
+        android:clickable="true"
+        app:strokeColor="@color/amarelo"
+        app:strokeWidth="1dp"
+        android:visibility="gone"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/tv_aviso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/amarelo"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_remover"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="@string/remover_do_carrinho"
+            android:layout_gravity="bottom"
+            android:textColor="@color/colorPrimary" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</com.google.android.material.card.MaterialCardView>

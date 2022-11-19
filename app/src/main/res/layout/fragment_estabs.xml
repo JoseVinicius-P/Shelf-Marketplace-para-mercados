@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.EstabelecimentosFragment"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/barra_superior_estabelecimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_estabelecimento"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/carregamento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:layout_below="@+id/barra_superior_estabelecimento">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_estabelecimentos_favoritos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:clipToPadding="false"
+                    android:paddingBottom="10dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbars="vertical"/>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_estabelecimentos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:clipToPadding="false"
+                    android:paddingBottom="10dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollbars="vertical"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_aviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nenhum_estabelecimento_encontrado"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@id/barra_superior_estabelecimento"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:textColor="@color/cinza"
+        android:alpha="0.7"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

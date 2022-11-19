@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_produto"
+    style="@style/Widget.MaterialComponents.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp"
+    android:paddingBottom="2dp"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <TextView
+            android:id="@+id/tv_quantidade"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/preto"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="3dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_item"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textSize="18sp"
+            android:layout_toEndOf="@+id/tv_quantidade"
+            android:layout_toStartOf="@+id/tv_preco"
+            android:lines="2"
+            android:layout_centerVertical="true"
+            android:textColor="@color/cinza_escuro"/>
+
+        <TextView
+            android:id="@+id/tv_preco"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"/>
+
+        <!--Separador-->
+        <View
+            android:id="@+id/separador1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cinza"
+            android:layout_marginBottom="2dp"
+            android:layout_below="@+id/tv_item"/>
+        
+    </RelativeLayout>
+
+</LinearLayout>

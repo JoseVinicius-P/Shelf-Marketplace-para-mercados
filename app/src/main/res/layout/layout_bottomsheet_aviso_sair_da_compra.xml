@@ -1,0 +1,70 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/fl_aviso"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_atencao"
+            android:layout_gravity="center"
+            android:contentDescription="@string/atencao" />
+
+        <TextView
+            android:id="@+id/tv_aviso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_margin="15dp"
+            android:text="Se você sair toda a compra será perdida!"
+            android:textColor="@color/cinza_escuro"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sair"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/sair"
+                android:textColor="@color/cinza_escuro" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_continuar_comprando"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/btn_sair"
+                android:text="@string/continuar_comprando"
+                android:textColor="@color/colorPrimary" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

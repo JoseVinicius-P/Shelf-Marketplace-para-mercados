@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_estabs"
+        android:icon="@drawable/ic_estab_black_24dp"
+        android:title="@string/mercados" />
+
+    <item
+        android:id="@+id/navigation_pedidos"
+        android:icon="@drawable/ic_pedidos_black_24dp"
+        android:title="@string/pedidos" />
+
+    <item
+        android:id="@+id/navigation_perfil"
+        android:icon="@drawable/ic_perfil_black_24dp"
+        android:title="@string/Perfil" />
+
+</menu>

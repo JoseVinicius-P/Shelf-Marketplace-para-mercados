@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.CarrinhoActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/barra_superior_carrinho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_carrinho"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:title="Carrinho de compras"
+            app:titleTextColor="@color/cinza_escuro" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/title_endereco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/endereco"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/alerta_endereco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_atencao_carrinho"
+                    android:layout_toEndOf="@+id/title_endereco"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:contentDescription="@string/alerta_endereco_nao_selecionado" />
+
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0.5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                app:strokeColor="@color/cinza_escuro"
+                android:visibility="gone"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/icon_endereco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_casa"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/endereco" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_toEndOf="@+id/icon_endereco"
+                        android:layout_margin="10dp"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:id="@+id/tv_cidade_estrado_cep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Iaciara - GO (73.920-000)"
+                            android:layout_marginBottom="5dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/cinza_escuro"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tv_endereco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cinza_escuro"/>
+
+                        <TextView
+                            android:id="@+id/tv_informacao_adicional"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cinza_escuro" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_novo_endereco"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/btn_endereco_padrao"
+                    android:text="@string/novo_endereco"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="12sp"
+                    app:rippleColor="@android:color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_endereco_padrao"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/endereco_salvo"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    app:rippleColor="@android:color/white" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/title_entrega_agendada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agendar_entrega_para_hoje_das"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/alerta_entrega_agendada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_atencao_carrinho"
+                    android:layout_toEndOf="@+id/title_entrega_agendada"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:contentDescription="@string/alerta_horario_de_entrega_nao_selecionado" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_aviso_hora_entrega"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="@string/voc_chegou_tarde_nao_temos_mais_horarios_de_entrega_essa_hora"/>
+
+            <HorizontalScrollView
+                android:id="@+id/container_horarios"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:scrollbars="none">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_horarios_entrega"
+                    android:layout_width="wrap_content"
+                    android:layout_height="94dp" />
+
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/title_produtos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/produtos_no_carrinho"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/alerta_produtos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_atencao_carrinho"
+                    android:layout_toEndOf="@+id/title_produtos"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:contentDescription="@string/alerta_algum_produto_possui_pendencia" />
+
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_produtos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:visibility="visible"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_adiciona_mais"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/adionar_mais_produtos"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center_horizontal"
+                app:rippleColor="@android:color/white"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+
+                <TextView
+                    android:id="@+id/label_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtotal"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp"
+                    tools:ignore="RelativeOverlap" />
+
+                <TextView
+                    android:id="@+id/tv_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/cinza_escuro"
+                    tools:ignore="RelativeOverlap" />
+
+                <TextView
+                    android:id="@+id/label_taxa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/taxa"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/label_subtotal"
+                    android:textColor="@color/cinza_escuro"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_taxa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@+id/label_taxa"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/cinza_escuro"/>
+
+                <!--Separador-->
+                <View
+                    android:id="@+id/separador1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/cinza"
+                    android:layout_below="@+id/label_taxa"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/label_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@+id/separador1" />
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_alignBottom="@+id/label_total"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp">
+
+                <TextView
+                    android:id="@+id/title_falta_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na_falta_de_um_item"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/alerta_falta_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_atencao_carrinho"
+                    android:layout_toEndOf="@+id/title_falta_item"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:contentDescription="@string/alerta_voc_nao_escolheu_o_que_fazer_na_falta_de_um_item" />
+            </RelativeLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_margin="15dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_entre_contrato"
+                    app:strokeWidth="0.8dp"
+                    android:layout_width="0dp"
+                    app:strokeColor="@color/cinza"
+                    android:layout_height="80dp"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="5dp"
+                    app:rippleColor="@android:color/white"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/entrar_em_contato_comigo"
+                        android:layout_margin="5dp"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/cinza_escuro"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_cancelar_item"
+                    android:layout_height="80dp"
+                    android:layout_width="0dp"
+                    app:strokeWidth="0.8dp"
+                    app:strokeColor="@color/cinza"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="5dp"
+                    app:rippleColor="@android:color/white"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/cancelar_item"
+                        android:layout_margin="5dp"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/cinza_escuro"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/title_forma_pagamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forma_de_pagamento"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/alerta_forma_pagamento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_atencao_carrinho"
+                    android:layout_toEndOf="@+id/title_forma_pagamento"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:contentDescription="@string/alerta_forma_de_pagamento_nao_selecionada" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/aviso_pagamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/o_pagamento_ser_feito_no_momento_da_entrega"
+                android:textColor="@color/cinza"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="3dp"
+                android:textSize="13sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_dinheiro"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:clickable="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_dinheiro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dinheiro"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:clickable="false"/>
+
+                            <TextView
+                                android:id="@+id/tv_troco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/troco_para"
+                                android:textColor="@color/cinza_escuro"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/tv_dinheiro"
+                                android:textSize="13sp"
+                                android:clickable="false"
+                                android:visibility="gone"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_pix"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:clickable="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_pix"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pix"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:clickable="false"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_transferencia"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:clickable="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_transferencia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/doc_ou_ted"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:clickable="false"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_debito"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_debito"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cartao_de_debito"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_credito"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_credito"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cartao_de_credito"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_cheque"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_cheque"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/cheque"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_nota"
+                        android:layout_width="150dp"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        app:strokeColor="@color/cinza"
+                        app:strokeWidth="0.8dp"
+                        android:layout_marginEnd="10dp"
+                        app:rippleColor="@android:color/white"
+                        android:clickable="true"
+                        android:visibility="gone"
+                        android:focusable="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_nota"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/nota"
+                                android:textColor="@color/cinza_escuro"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_finalizar"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/finalizar_compra"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

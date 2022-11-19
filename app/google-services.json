@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "173074935538",
+    "project_id": "shelf-app-de-compras",
+    "storage_bucket": "shelf-app-de-compras.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173074935538:android:880c379f353ad06e5f6a6b",
+        "android_client_info": {
+          "package_name": "com.jv.shelf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173074935538-oov1vji8p6re1oanov79pkquqrdo5evj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkYzFkzHOLE7XXXYVjBRDrsJ2S1DAFIVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173074935538-oov1vji8p6re1oanov79pkquqrdo5evj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173074935538:android:90c36335a36b42b05f6a6b",
+        "android_client_info": {
+          "package_name": "com.jv.shelf_cliente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173074935538-oov1vji8p6re1oanov79pkquqrdo5evj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkYzFkzHOLE7XXXYVjBRDrsJ2S1DAFIVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173074935538-oov1vji8p6re1oanov79pkquqrdo5evj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

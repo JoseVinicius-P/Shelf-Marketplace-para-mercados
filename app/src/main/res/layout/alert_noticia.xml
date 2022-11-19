@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:id="@+id/container_noticia">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/iv_noticia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_fechar"
+        style="?attr/materialButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/iv_noticia"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@android:color/white"
+        android:text="FECHAR"
+        android:textColor="@color/colorPrimary"
+        app:icon="@drawable/ic_fechar"
+        app:iconGravity="end"
+        app:iconTint="@color/colorPrimary"
+        app:strokeColor="@color/colorPrimary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_saber_mais"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_noticia"
+        android:layout_centerHorizontal="true"
+        android:text="@string/saber_mais"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"/>
+
+</RelativeLayout>

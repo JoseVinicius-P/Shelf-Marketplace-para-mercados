@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PerfilFragment"
+    android:layout_marginBottom="?attr/actionBarSize">
+
+    <RelativeLayout
+        android:id="@+id/container_dados_pessoais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_img_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:strokeWidth="0.5dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="visible"
+            app:cardCornerRadius="33dp">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/img_perfil"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/seu_perfil" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/btn_edit_dados_pessoais"
+            android:layout_toEndOf="@+id/cv_img_perfil">
+
+            <TextView
+                android:id="@+id/tv_nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cinza_escuro"
+                android:gravity="start"
+                android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/tv_telefone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cinza"
+                android:gravity="center"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_edit_dados_pessoais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_lapis"
+            android:background="@null"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/editar_dados_pessoais" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/container_dados_pessoais">
+
+        <TextView
+            android:id="@+id/tc_label_meus_endereços"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/meu_endereco"
+            android:textColor="@color/cinza_escuro"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_endereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:strokeWidth="0.5dp"
+            android:layout_marginTop="15dp"
+            app:strokeColor="@color/cinza_escuro"
+            android:visibility="visible"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="10dp"
+            android:layout_below="@+id/tc_label_meus_endereços">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/icon_endereco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_casa"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/detalhes_do_endereco" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@+id/icon_endereco"
+                    android:layout_toStartOf="@+id/btn_edit_endereco"
+                    android:layout_margin="10dp"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Iaciara - GO (73.920-000)"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/cinza_escuro"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_endereco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cinza_escuro"/>
+
+                    <TextView
+                        android:id="@+id/tv_informacao_adicional"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cinza_escuro"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_edit_endereco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_lapis"
+                    android:background="@null"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/editar_meu_endereco" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:id="@+id/rl_fale_conosco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_sair">
+
+            <ImageView
+                android:id="@+id/icone_fale_conosco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_fale_conosco"
+                android:layout_alignBottom="@id/tv_fale_conosco"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                android:contentDescription="@string/fale_conosco"
+                android:src="@drawable/ic_fale_conosco" />
+
+            <TextView
+                android:id="@+id/tv_fale_conosco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/icone_fale_conosco"
+                android:clickable="false"
+                android:text="@string/fale_conosco"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_sair"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/icone_sair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="false"
+                android:contentDescription="@string/sair"
+                android:src="@drawable/ic_sair"
+                android:layout_alignTop="@+id/tv_sair"
+                android:layout_alignBottom="@id/tv_sair"/>
+
+            <TextView
+                android:id="@+id/tv_sair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/icone_sair"
+                android:clickable="false"
+                android:text="@string/sair"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

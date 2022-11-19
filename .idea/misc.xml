@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout-v29/layout_produto_item.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/activity_carrinho.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/activity_concluir_cadastro.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/activity_estabelecimento.xml" value="0.19375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/activity_noticia.xml" value="0.33" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/alert_noticia.xml" value="0.178125" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/fragment_estabs.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/fragment_perfil.xml" value="0.25" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/item_textView.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_aviso.xml" value="0.14166666666666666" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_aviso_atualizacao.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_aviso_conexao.xml" value="0.19375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_aviso_sair_da_compra.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_aviso_verificacao.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_cadastrar_usuario.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_carregamento.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_edit_dados_pessoais.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_edit_endereco.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_fale_conosco.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_produtos_falhos.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_bottomsheet_rescuperar_senha.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_item_compra_item.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_produto_carrinho_item.xml" value="0.18425925925925926" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/layout/layout_produto_item.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/menu/menu_default.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/menu/menu_fragment_estab.xml" value="0.209375" />
+        <entry key="..\:/Users/josev/AndroidStudioProjects/ShelfCliente/app/src/main/res/menu/menu_fragment_estabs.xml" value="0.19375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

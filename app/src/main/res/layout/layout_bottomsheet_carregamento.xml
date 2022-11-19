@@ -1,0 +1,61 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/fl_carregamento"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@android:color/white">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+
+            <ProgressBar
+                android:id="@+id/pb_carregamento"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/label_carregamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/cinza_escuro"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/aviso_carregamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nao_saia_do_app_enquanto_concluimos_cadastro"
+            android:textColor="@color/cinza"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="25dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_concluído"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/entrar_no_shelf"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+</FrameLayout>

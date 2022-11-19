@@ -1,0 +1,143 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/recuperar_senha"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@android:color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_carregamento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@android:color/white"
+        android:clickable="true"
+        android:visibility="gone"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recuperar_senha"
+            android:textSize="23sp"
+            android:textColor="@color/cinza_escuro"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="20dp"/>
+
+
+        <LinearLayout
+            android:id="@+id/ll_carregamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/pb_carregamento"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/label_avisos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/enviando_email"/>
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_ok"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20dp"
+            android:layout_gravity="end|bottom"
+            android:text="@string/ok"
+            android:textColor="@color/colorPrimary"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recuperar_senha"
+            android:layout_gravity="center"
+            android:textSize="23sp"
+            android:textColor="@color/cinza_escuro"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_input_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:textColorHint="@color/cinza"
+            app:boxStrokeColor="@color/cinza"
+            app:hintTextColor="@color/cinza_escuro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_usuario"
+                android:drawablePadding="10dp"
+                android:hint="@string/e_mail_cadastrado"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/cinza_escuro" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_enviar_email"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/enviar_email_de_recupera_o"
+                android:textColor="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:alpha="0.9"
+        android:visibility="gone"
+        android:focusable="true">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/spinner"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,159 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/criar_conta"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:background="@android:color/white">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_carregamento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@android:color/white"
+        android:clickable="true"
+        android:visibility="gone"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/criando_conta"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vamos_criar_sua_conta"
+            android:layout_gravity="center"
+            android:textSize="23sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_input_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:textColorHint="@color/cinza"
+            app:boxStrokeColor="@color/cinza"
+            app:hintTextColor="@color/cinza_escuro"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_usuario"
+                android:drawablePadding="10dp"
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/cinza_escuro" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_input_senha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/cinza"
+            android:layout_gravity="center"
+            app:boxStrokeColor="@color/cinza"
+            app:endIconMode="password_toggle"
+            app:hintTextColor="@color/cinza_escuro"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_chave"
+                android:drawablePadding="10dp"
+                android:hint="@string/senha"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:layout_gravity="center"
+                android:textColor="@color/cinza_escuro"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cb_concordancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/cinza_escuro"/>
+
+            <TextView
+                android:id="@+id/tv_termo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/cb_concordancia"
+                android:layout_alignTop="@id/cb_concordancia"
+                android:layout_alignBottom="@id/cb_concordancia"
+                android:gravity="center_vertical"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancelar_criacao_conta"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/btn_criar_conta"
+                android:layout_marginTop="20dp"
+                android:text="@string/cancelar"
+                android:textColor="@color/cinza_escuro"
+                android:layout_marginEnd="15dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_criar_conta"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/criar_conta"
+                android:textColor="@color/colorPrimary" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

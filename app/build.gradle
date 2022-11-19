@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.jv.shelf_cliente"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 31
+        versionName "1.2.0 - Beta"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.navigation:navigation-fragment:2.4.2'
+    implementation 'androidx.navigation:navigation-ui:2.4.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.firebase:firebase-auth:21.0.6'
+    implementation 'com.google.firebase:firebase-firestore:24.2.0'
+    implementation platform('com.google.firebase:firebase-bom:27.1.0')
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    //Adapter de recyclerView
+    implementation 'com.xwray:groupie:2.9.0'
+
+    //Para pesquisa de produtos
+    implementation 'com.algolia:algoliasearch-android:3.27.0'
+    
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //pediu no tablet
+    implementation "io.grpc:grpc-okhttp:1.41.0"
+}

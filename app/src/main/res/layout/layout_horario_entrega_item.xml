@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_horario_entrega"
+    style="@style/Widget.MaterialComponents.CardView"
+    android:layout_width="150dp"
+    android:layout_height="80dp"
+    android:layout_marginStart="7dp"
+    android:layout_marginTop="7dp"
+    android:layout_marginEnd="7dp"
+    android:orientation="vertical"
+    app:strokeColor="@color/cinza"
+    app:strokeWidth="0.8dp"
+    app:rippleColor="@android:color/white"
+    android:clickable="true"
+    android:background="@android:color/white"
+    android:focusable="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tv_hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_taxa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/cinza_escuro"
+                android:layout_below="@+id/tv_hora"
+                android:textSize="13sp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/container_indisponível"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:alpha="0.8"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/indisponivel"
+            android:textStyle="bold"
+            android:textColor="@color/cinza_escuro"
+            android:gravity="center"
+            android:rotation="25"/>
+
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

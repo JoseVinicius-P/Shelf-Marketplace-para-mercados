@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_pai"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.ConcluirCadastroActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/barra_superior_concluir_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_con_cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            app:title="Conclusão de cadastro"
+            app:titleTextColor="@color/cinza_escuro" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/falta_pouco_precisamos_de_mais_alguns_dados"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textColor="@color/cinza_escuro"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/cinza_escuro"
+                android:text="@string/seus_dados_pessoais"
+                android:textSize="18sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_nome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/cinza_escuro"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nome_completo"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_telefone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textColorHint="@color/cinza_escuro"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_telefone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/telefone"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/cinza_escuro"
+                android:text="@string/endereco_de_entrega"
+                android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:id="@+id/container_cidade_estado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:clickable="false">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/layout_input_estados"
+                        app:errorEnabled="true"
+                        android:enabled="false"
+                        android:clickable="false">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/auto_tv_estados"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GO"
+                            android:hint=" "
+                            android:inputType="none"
+                            android:clickable="false"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/layout_input_cidades"
+                        android:layout_marginStart="5dp"
+                        android:layout_toEndOf="@+id/layout_input_estados"
+                        app:errorEnabled="true"
+                        android:enabled="false"
+                        android:clickable="false">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/auto_tv_cidades"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint=" "
+                            android:text="Iaciara"
+                            android:inputType="none"
+                            android:clickable="false"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_input_cep"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:textColorHint="@color/cinza_escuro"
+                    app:boxStrokeColor="@color/cinza"
+                    app:hintTextColor="@color/colorPrimary"
+                    app:errorEnabled="false"
+                    android:clickable="false"
+                    android:alpha="0.4"
+                    app:helperText="Nosso app está restrito somente a Iaciara GO no momento. Estamos trabalhando para expandir nosso horizontes!">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_cep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="CEP"
+                        android:text="73.920-000"
+                        android:enabled="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/cinza"
+                        android:textSize="18sp"
+                        android:clickable="false"
+                        tools:ignore="HardcodedText" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_rua"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/cinza_escuro"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_rua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/rua_avenida"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:columnCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="true"
+                android:rowCount="1">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/li_quadra"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:layout_columnWeight="1"
+                    android:textColorHint="@color/cinza_escuro"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextColor="@color/colorPrimary"
+                    app:errorEnabled="true"
+                    android:layout_marginEnd="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_quadra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/quadra"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPostalAddress"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="18sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/li_lote"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_columnWeight="1"
+                    android:textColorHint="@color/cinza_escuro"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextColor="@color/colorPrimary"
+                    app:errorEnabled="true"
+                    android:layout_marginEnd="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_lote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/lote"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPostalAddress"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="18sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/li_numero"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_column="2"
+                    android:layout_row="0"
+                    android:layout_columnWeight="1"
+                    android:textColorHint="@color/cinza_escuro"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextColor="@color/colorPrimary"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_numero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/numero"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPostalAddress"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="18sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </GridLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_informacao_adicional"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/cinza_escuro"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:hintTextColor="@color/colorPrimary"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_informacao_adicional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/informacao_adicional"
+                    android:imeOptions="actionDone"
+                    android:inputType="textAutoCorrect"
+                    android:textColor="@color/cinza_escuro"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_concluir"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="25dp"
+                android:text="@string/concluir_cadastro"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

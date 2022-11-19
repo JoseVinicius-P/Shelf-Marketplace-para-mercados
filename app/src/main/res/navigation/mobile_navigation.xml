@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_estabs">
+
+    <fragment
+        android:id="@+id/navigation_estabs"
+        android:name="com.jv.shelf_cliente.fragments.EstabelecimentosFragment"
+        android:label="@string/mercados"
+        tools:layout="@layout/fragment_estabs" />
+
+    <fragment
+        android:id="@+id/navigation_pedidos"
+        android:name="com.jv.shelf_cliente.fragments.ComprasFragment"
+        android:label="@string/pedidos"
+        tools:layout="@layout/fragment_compras" />
+
+    <fragment
+        android:id="@+id/navigation_perfil"
+        android:name="com.jv.shelf_cliente.fragments.PerfilFragment"
+        android:label="@string/Perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>
